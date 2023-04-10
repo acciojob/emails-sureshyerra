@@ -32,8 +32,8 @@ public class Workspace extends Gmail{
         Collections.sort(calendar, new Comparator<Meeting>() {
             @Override
             public int compare(Meeting o1, Meeting o2) {
-                return o1.getEndTime().compareTo(o2.getEndTime()
-                );
+                return o1.getEndTime().compareTo(o2.getEndTime());
+
             }
         });
         int count = 0;
@@ -41,7 +41,7 @@ public class Workspace extends Gmail{
         LocalTime endtime = calendar.get(0).getEndTime();
         for(int i = 1;i<calendar.size();i++){
             LocalTime starttime = calendar.get(i).getStartTime();
-            if(starttime.compareTo(endtime) > 0){
+            if(starttime.compareTo(endtime) >= 0){
                 count++;
                 endtime = calendar.get(i).getEndTime();
             }
