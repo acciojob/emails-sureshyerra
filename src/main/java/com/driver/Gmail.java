@@ -69,7 +69,7 @@ public class Gmail extends Email {
     }
 
     public String findLatestMessage(){
-        if(inbox.size() == 0){
+        if(inbox.isEmpty()){
             return null;
         }else{
             return inbox.get(inbox.size()-1).getMessage();
@@ -81,7 +81,7 @@ public class Gmail extends Email {
     }
 
     public String findOldestMessage(){
-        if(!inbox.isEmpty()){
+        if(inbox.isEmpty()){
             return null;
         }
         else{
