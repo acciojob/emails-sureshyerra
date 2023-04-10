@@ -19,9 +19,9 @@ public class Email {
     }
 
     public void changePassword(String oldPassword, String newPassword){
-        if(oldPassword.equals(password)){
+        if(oldPassword.equals(this.password)){
             if(checkPassword(newPassword)){
-                password = newPassword;
+               this.password = newPassword;
             }
         }
         //Change password only if the oldPassword is equal to current password and the new password meets all of the following:

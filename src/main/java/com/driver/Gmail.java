@@ -25,8 +25,8 @@ public class Gmail extends Email {
             trash.add(mail);
             inbox.remove(0);
         }
-            Mail mail = new Mail(date,sender,message);
-            inbox.add(mail);
+            Mail newmail = new Mail(date,sender,message);
+            inbox.add(newmail);
 
         // If the inbox is full, move the oldest mail in the inbox to trash and add the new mail to inbox.
         // It is guaranteed that:
