@@ -40,6 +40,7 @@ public class Gmail extends Email {
             if(inbox.get(i).getMessage().equals(message)){
                 trash.add(inbox.get(i));
                 inbox.remove(i);
+                break;
             }
         }
         // Each message is distinct
@@ -106,7 +107,7 @@ public class Gmail extends Email {
     }
 
     public int getInboxCapacity() {
-        return inboxCapacity;
+        return this.inboxCapacity;
         // Return the maximum number of mails that can be stored in the inbox
     }
 }
