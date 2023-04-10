@@ -19,7 +19,7 @@ public class Email {
     }
 
     public void changePassword(String oldPassword, String newPassword){
-        if(password.equals(oldPassword)){
+        if(oldPassword.equals(password)){
             if(checkPassword(newPassword)){
                 password = newPassword;
             }

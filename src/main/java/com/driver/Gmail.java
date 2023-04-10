@@ -40,10 +40,10 @@ public class Gmail extends Email {
     }
 
     public void deleteMail(String message){
-        for(Mail mail : inbox){
-            if(mail.getMessage().equals(message)){
-                inbox.remove(mail);
-                trash.add(mail);
+        for(Mail m : inbox){
+            if(m.getMessage().equals(message)){
+               // inbox.remove(m);
+                trash.add(m);
             }
         }
         // Each message is distinct
@@ -55,8 +55,8 @@ public class Gmail extends Email {
         if(inbox.size() == 0){
             return null;
         }else{
-            Mail mail = inbox.get(inbox.size()-1);
-            return mail.getMessage();
+            return inbox.get(inbox.size()-1).getMessage();
+
         }
         // If the inbox is empty, return null
         // Else, return the message of the latest mail present in the inbox
