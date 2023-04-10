@@ -20,18 +20,14 @@ public class Gmail extends Email {
     }
 
     public void receiveMail(Date date, String sender, String message){
-        if(inbox.size() == inboxCapacity){
+        if(inbox.size() == inboxCapacity) {
             Mail mail = inbox.get(0);
             trash.add(mail);
             inbox.remove(0);
-            Mail mail1 = new Mail(date,sender,message);
-            inbox.add(mail1);
-
         }
-        else {
             Mail mail = new Mail(date,sender,message);
             inbox.add(mail);
-        }
+
         // If the inbox is full, move the oldest mail in the inbox to trash and add the new mail to inbox.
         // It is guaranteed that:
         // 1. Each mail in the inbox is distinct.
@@ -40,10 +36,10 @@ public class Gmail extends Email {
     }
 
     public void deleteMail(String message){
-        for(Mail m : inbox){
-            if(m.getMessage().equals(message)){
-               // inbox.remove(m);
-                trash.add(m);
+        for(int i = 0;i<inbox.size();i++){
+            if(inbox.get(i).getMessage().equals(message)){
+                trash.add(inbox.get(i));
+                inbox.remove(i);
             }
         }
         // Each message is distinct
@@ -68,8 +64,8 @@ public class Gmail extends Email {
             return null;
         }
         else{
-            Mail mail = inbox.get(0);
-            return mail.getMessage();
+            return inbox.get(0).getMessage();
+
         }
 
         // If the inbox is empty, return null
